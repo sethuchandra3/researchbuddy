@@ -1,0 +1,23 @@
+{
+  "paperId": "1706.03762",
+  "title": "Attention Is All You Need",
+  "image": "/assets/demo-1706.03762.jpg",
+  "audio": "/assets/demo-1706.03762.mp3",
+  "narration": "What if a computer could learn language the way we actually read — by paying attention to every word at once, instead of one at a time? That's exactly what researchers at Google set out to explore. They built a brand new kind of AI called the Transformer, which throws out the old step-by-step approach and instead lets every word look at every other word simultaneously. Think of it like reading a whole sentence in one glance rather than sounding it out letter by letter. The result? Their system translated languages better than anything before it, and trained in days instead of weeks. This breakthrough became the foundation for nearly every powerful AI language tool you use today — from search engines to chatbots — making smarter, faster AI possible for everyone.",
+  "cards": [
+    {
+      "heading": "Old AI Read Word by Word",
+      "text": "Previous translation systems processed language one step at a time, making them slow and hard to improve."
+    },
+    {
+      "heading": "Attention Does the Heavy Lifting",
+      "text": "The researchers built the Transformer, an architecture that uses attention mechanisms to process all words simultaneously instead of in sequence."
+    },
+    {
+      "heading": "Faster, Better, More Powerful",
+      "text": "The Transformer set new records in translation quality while training in a fraction of the time, and it became the backbone of modern AI language tools."
+    }
+  ],
+  "generatedWith": "DigitalOcean Gradient AI Platform (Flux + ElevenLabs)",
+  "generatedAt": "2026-07-11T23:01:22.247Z"
+}

@@ -179,6 +179,59 @@ async function fetchAbstractOnly(id) {
   };
 }
 
+// "Picked for you": recent papers by the reader's interest area.
+// HONESTY NOTE: arXiv has no reliable "difficulty" field, so the reader's
+// competency level deliberately does NOT filter these suggestions — it only
+// shapes how Rodney explains things once they're reading.
+const INTEREST_QUERIES = {
+  science: "cat:q-bio.NC OR cat:physics.pop-ph",
+  tech: "cat:cs.AI OR cat:cs.LG",
+  society: "cat:econ.GN OR cat:cs.CY",
+};
+
+const recommendCache = new Map(); // interest -> {at, papers}
+const RECOMMEND_TTL = 30 * 60 * 1000;
+
+export async function recommendPapers(interest) {
+  // "Just curious" rotates through the three areas hour by hour
+  const keys = Object.keys(INTEREST_QUERIES);
+  const key = INTEREST_QUERIES[interest]
+    ? interest
+    : keys[new Date().getHours() % keys.length];
+
+  const cached = recommendCache.get(key);
+  if (cached && Date.now() - cached.at < RECOMMEND_TTL) return cached.papers;
+
+  const url =
+    "https://export.arxiv.org/api/query?search_query=" +
+    encodeURIComponent(INTEREST_QUERIES[key]) +
+    "&sortBy=submittedDate&sortOrder=descending&max_results=3";
+  const res = await get(url);
+  if (!res.ok) throw new Error("arXiv search unavailable");
+  const $ = cheerio.load(await res.text(), { xmlMode: true });
+  const papers = $("entry")
+    .map((_, el) => {
+      const $el = $(el);
+      const idUrl = $el.find("id").first().text();
+      const id = normalizeArxivId(idUrl);
+      const title = clean($el.find("title").first().text());
+      const summary = clean($el.find("summary").first().text());
+      return id && title
+        ? {
+            id,
+            title,
+            blurb: summary.length > 180 ? summary.slice(0, 177) + "…" : summary,
+          }
+        : null;
+    })
+    .get()
+    .filter(Boolean)
+    .slice(0, 3);
+  if (!papers.length) throw new Error("no recommendations");
+  recommendCache.set(key, { at: Date.now(), papers });
+  return papers;
+}
+
 export async function fetchArxivPaper(rawInput) {
   const id = normalizeArxivId(rawInput);
   if (!id) {

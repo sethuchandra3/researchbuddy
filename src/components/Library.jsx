@@ -4,8 +4,9 @@ import { getLibrary, getPaper } from "../lib/api.js";
 import RodneyOwl from "./RodneyOwl.jsx";
 import PaperCard from "./PaperCard.jsx";
 import ArxivInput from "./ArxivInput.jsx";
+import PickedForYou from "./PickedForYou.jsx";
 
-export default function Library({ onOpenPaper, onShowPapers, onEditPrefs }) {
+export default function Library({ onOpenPaper, onShowPapers, onEditPrefs, prefsVersion }) {
   const rootRef = useRef(null);
   const [manifest, setManifest] = useState(null);
   const [error, setError] = useState("");
@@ -103,6 +104,8 @@ export default function Library({ onOpenPaper, onShowPapers, onEditPrefs }) {
           He brings the patience.
         </p>
       </section>
+
+      <PickedForYou onOpenPaper={onOpenPaper} prefsVersion={prefsVersion} />
 
       <section className="mx-auto max-w-5xl px-5 pt-16">
         <div className="mb-5 flex items-baseline gap-3">

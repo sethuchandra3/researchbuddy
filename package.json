@@ -10,7 +10,8 @@
     "dev": "concurrently -k \"node --env-file=.env --watch server/index.js\" \"vite\"",
     "build": "vite build",
     "start": "node --env-file-if-exists=.env server/index.js",
-    "fetch-paper": "node --env-file-if-exists=.env scripts/fetch-paper.mjs"
+    "fetch-paper": "node --env-file-if-exists=.env scripts/fetch-paper.mjs",
+    "generate-demo-assets": "node --env-file-if-exists=.env scripts/generate-demo-assets.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

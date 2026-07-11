@@ -111,6 +111,20 @@ export function buildSuggestMessages({ title, abstract } = {}) {
   ];
 }
 
+export function buildMindmapMessages({ title, abstract } = {}) {
+  return [
+    {
+      role: "system",
+      content:
+        "You generate concept maps for a research-paper reading app. Respond with ONLY valid JSON — no prose, no code fences.",
+    },
+    {
+      role: "user",
+      content: `PAPER TITLE: ${cap(title, 300)}\nABSTRACT: ${cap(abstract, 2500)}\n\nBased on this paper's title and abstract, generate a concept map as JSON with this exact shape:\n{\n  "central": "<paper's core idea in 4-6 words>",\n  "nodes": [\n    { "id": "1", "label": "<concept, 3-5 words>", "connects_to": "central" }\n  ]\n}\nInclude 4-6 nodes total, each connecting to "central" or to another node's id. Labels must be plain-language, not jargon. Return ONLY the JSON, no other text.`,
+    },
+  ];
+}
+
 export function buildChatMessages(body = {}) {
   const { history = [], question } = body;
   const trimmed = history.slice(-8).map((m) => ({

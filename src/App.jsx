@@ -9,6 +9,7 @@ export default function App() {
   const [paper, setPaper] = useState(null);
   const [view, setView] = useState("library"); // 'library' | 'papers'
   const [showOnboarding, setShowOnboarding] = useState(() => getPrefs() === null);
+  const [prefsVersion, setPrefsVersion] = useState(0); // bump → refresh picks
 
   // Browser Back returns into the app instead of leaving it
   useEffect(() => {
@@ -55,9 +56,17 @@ export default function App() {
           onOpenPaper={openPaper}
           onShowPapers={showPapers}
           onEditPrefs={editPrefs}
+          prefsVersion={prefsVersion}
         />
       )}
-      {showOnboarding && <OnboardingModal onDone={() => setShowOnboarding(false)} />}
+      {showOnboarding && (
+        <OnboardingModal
+          onDone={() => {
+            setShowOnboarding(false);
+            setPrefsVersion((v) => v + 1);
+          }}
+        />
+      )}
     </>
   );
 }

@@ -17,6 +17,29 @@ export async function fetchArxiv(input) {
   return data;
 }
 
+// Concept map for the Mind Map tab; throws on failure (client shows notice).
+export async function getMindmap(paper) {
+  const res = await fetch("/api/mindmap", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title: paper.title, abstract: paper.abstract }),
+  });
+  if (!res.ok) throw new Error("no mindmap");
+  const data = await res.json();
+  if (!data.central || !Array.isArray(data.nodes)) throw new Error("no mindmap");
+  return data;
+}
+
+// "Picked for you" recommendations by interest area.
+export async function getRecommendations(interest) {
+  const res = await fetch(`/api/recommend?interest=${encodeURIComponent(interest)}`);
+  if (!res.ok) throw new Error("no recommendations");
+  const data = await res.json();
+  if (!Array.isArray(data.papers) || !data.papers.length)
+    throw new Error("no recommendations");
+  return data.papers;
+}
+
 // Content-specific suggested questions; throws if unavailable so the
 // caller can fall back to static chips.
 export async function getSuggestions(paper) {

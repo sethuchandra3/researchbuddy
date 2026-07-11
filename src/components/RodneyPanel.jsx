@@ -4,6 +4,8 @@ import { streamLLM } from "../lib/api.js";
 import { formatRodney } from "../lib/format.jsx";
 import { getPrefs } from "../lib/prefs.js";
 import RodneyOwl from "./RodneyOwl.jsx";
+import MindMap from "./MindMap.jsx";
+import WatchMode from "./WatchMode.jsx";
 
 const truncate = (s, n) => (s && s.length > n ? s.slice(0, n).trimEnd() + "…" : s);
 
@@ -19,6 +21,7 @@ export default function RodneyPanel({ paper, request, onClose, onEditPrefs }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [input, setInput] = useState("");
+  const [tab, setTab] = useState("chat");
 
   useGSAP(
     () => {
@@ -87,6 +90,7 @@ export default function RodneyPanel({ paper, request, onClose, onEditPrefs }) {
 
   useEffect(() => {
     setMessages([]);
+    setTab("chat");
     if (request.mode === "overview") {
       run("/api/explain", { ...baseContext(), mode: "overview" }, "What's this paper about?");
     } else if (request.mode === "question") {
@@ -185,7 +189,44 @@ export default function RodneyPanel({ paper, request, onClose, onEditPrefs }) {
         </button>
       </header>
 
-      <div ref={bodyRef} className="flex-1 space-y-4 overflow-y-auto px-5 py-5">
+      <div className="flex gap-5 border-b border-line px-5">
+        {[
+          { key: "chat", label: "Chat" },
+          { key: "map", label: "Mind map" },
+          { key: "watch", label: "Watch" },
+        ].map((t) => (
+          <button
+            key={t.key}
+            onClick={() => setTab(t.key)}
+            className={`cursor-pointer border-b-2 py-2 text-sm font-medium transition-colors ${
+              tab === t.key
+                ? "border-rodney text-rodney"
+                : "border-transparent text-ink-faint hover:text-ink"
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {tab === "map" && (
+        <div className="flex-1 overflow-y-auto">
+          <MindMap paper={paper} />
+        </div>
+      )}
+
+      {tab === "watch" && (
+        <div className="flex-1 overflow-hidden">
+          <WatchMode paper={paper} />
+        </div>
+      )}
+
+      <div
+        ref={bodyRef}
+        className={`flex-1 space-y-4 overflow-y-auto px-5 py-5 ${
+          tab === "chat" ? "" : "hidden"
+        }`}
+      >
         {messages.map((m, i) =>
           m.role === "user" ? (
             <div key={i} className="flex justify-end">
@@ -225,7 +266,10 @@ export default function RodneyPanel({ paper, request, onClose, onEditPrefs }) {
         )}
       </div>
 
-      <form onSubmit={sendFollowUp} className="border-t border-line px-4 py-3">
+      <form
+        onSubmit={sendFollowUp}
+        className={`border-t border-line px-4 py-3 ${tab === "chat" ? "" : "hidden"}`}
+      >
         <div className="flex items-center gap-2">
           <input
             id="rodney-followup"

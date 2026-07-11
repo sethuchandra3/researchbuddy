@@ -20,9 +20,15 @@ const agentClient =
       })
     : null;
 
+// The DO Agent has extended thinking enabled, so max_completion_tokens must
+// exceed its thinking budget (observed 1024) or the request 400s. Give agent
+// calls generous headroom; thinking tokens don't appear in the streamed text.
+const AGENT_MIN_TOKENS = 2048;
+
 function attempts() {
   const list = [];
-  if (agentClient) list.push({ client: agentClient, model: "agent", label: "do-agent" });
+  if (agentClient)
+    list.push({ client: agentClient, model: "agent", label: "do-agent", isAgent: true });
   list.push({
     client: inferenceClient,
     model: process.env.RODNEY_MODEL || "anthropic-claude-4.6-sonnet",
@@ -34,6 +40,27 @@ function attempts() {
     label: "inference-fallback",
   });
   return list;
+}
+
+// The DO Agent forbids client-supplied system/developer messages — its
+// instructions live in the agent's own configuration. Fold any system
+// message into the first user turn so the persona still reaches the model.
+function prepareMessages(messages, isAgent) {
+  if (!isAgent) return messages;
+  const systemText = messages
+    .filter((m) => m.role === "system")
+    .map((m) => m.content)
+    .join("\n\n");
+  const rest = messages.filter((m) => m.role !== "system");
+  if (!systemText) return rest;
+  const firstUser = rest.findIndex((m) => m.role === "user");
+  if (firstUser === -1) return [{ role: "user", content: systemText }, ...rest];
+  const merged = rest.slice();
+  merged[firstUser] = {
+    ...merged[firstUser],
+    content: `${systemText}\n\n---\n\n${merged[firstUser].content}`,
+  };
+  return merged;
 }
 
 const FRIENDLY_ERROR = "Rodney lost his train of thought — mind trying that again?";
@@ -50,15 +77,16 @@ export async function streamToResponse(res, messages) {
   });
   res.flushHeaders?.();
 
-  for (const { client, model, label } of attempts()) {
+  for (const { client, model, label, isAgent } of attempts()) {
     let sentAny = false;
     try {
       const stream = await client.chat.completions.create({
         model,
-        messages,
+        messages: prepareMessages(messages, isAgent),
         stream: true,
-        max_completion_tokens: 1024,
-        temperature: 0.7,
+        max_completion_tokens: isAgent ? AGENT_MIN_TOKENS : 1024,
+        // Extended thinking (on for the agent) requires temperature 1
+        temperature: isAgent ? 1 : 0.7,
       });
       res.on("close", () => stream.controller.abort());
       for await (const chunk of stream) {
@@ -86,13 +114,13 @@ export async function streamToResponse(res, messages) {
 
 // Non-streaming completion for small utility calls (e.g. suggested questions).
 export async function complete(messages, { maxTokens = 400, temperature = 0.8 } = {}) {
-  for (const { client, model, label } of attempts()) {
+  for (const { client, model, label, isAgent } of attempts()) {
     try {
       const r = await client.chat.completions.create({
         model,
-        messages,
-        max_completion_tokens: maxTokens,
-        temperature,
+        messages: prepareMessages(messages, isAgent),
+        max_completion_tokens: isAgent ? Math.max(maxTokens, AGENT_MIN_TOKENS) : maxTokens,
+        temperature: isAgent ? 1 : temperature,
       });
       const text = r.choices?.[0]?.message?.content;
       if (text) return text;

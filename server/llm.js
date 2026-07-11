@@ -1,12 +1,18 @@
 import OpenAI from "openai";
 
-// Primary: a DigitalOcean Agent endpoint when configured (AGENT_ENDPOINT +
-// AGENT_API_KEY). Fallback: the DO Inference Engine directly. Both are
-// OpenAI-compatible, so each attempt is just a client + model pair.
-const inferenceClient = new OpenAI({
-  apiKey: process.env.DIGITAL_OCEAN_MODEL_ACCESS_KEY,
-  baseURL: "https://inference.do-ai.run/v1/",
-});
+// Two possible brains, each OpenAI-compatible:
+//   • DO Agent (primary when configured): AGENT_ENDPOINT + AGENT_API_KEY
+//   • DO Inference (fallback):            DIGITAL_OCEAN_MODEL_ACCESS_KEY
+// Each client is built ONLY when its credentials are present, so a missing
+// set never crashes the server at boot — it just drops that rung of the
+// ladder. (The OpenAI SDK throws "Missing credentials" if constructed with
+// an undefined apiKey, which is what took down the deploy before.)
+const inferenceClient = process.env.DIGITAL_OCEAN_MODEL_ACCESS_KEY
+  ? new OpenAI({
+      apiKey: process.env.DIGITAL_OCEAN_MODEL_ACCESS_KEY,
+      baseURL: "https://inference.do-ai.run/v1/",
+    })
+  : null;
 
 const agentBase = (process.env.AGENT_ENDPOINT || "")
   .trim()
@@ -20,6 +26,23 @@ const agentClient =
       })
     : null;
 
+if (!inferenceClient && !agentClient) {
+  console.error(
+    "[llm] No model credentials set. Add DIGITAL_OCEAN_MODEL_ACCESS_KEY " +
+      "(recommended) and/or AGENT_ENDPOINT + AGENT_API_KEY. Rodney will " +
+      "return a friendly error until one is present."
+  );
+} else {
+  console.log(
+    `[llm] brains ready → ${[
+      agentClient && "DO Agent (primary)",
+      inferenceClient && "DO Inference (fallback)",
+    ]
+      .filter(Boolean)
+      .join(", ")}`
+  );
+}
+
 // The DO Agent has extended thinking enabled, so max_completion_tokens must
 // exceed its thinking budget (observed 1024) or the request 400s. Give agent
 // calls generous headroom; thinking tokens don't appear in the streamed text.
@@ -29,16 +52,18 @@ function attempts() {
   const list = [];
   if (agentClient)
     list.push({ client: agentClient, model: "agent", label: "do-agent", isAgent: true });
-  list.push({
-    client: inferenceClient,
-    model: process.env.RODNEY_MODEL || "anthropic-claude-4.6-sonnet",
-    label: "inference-primary",
-  });
-  list.push({
-    client: inferenceClient,
-    model: process.env.RODNEY_FALLBACK_MODEL || "anthropic-claude-haiku-4.5",
-    label: "inference-fallback",
-  });
+  if (inferenceClient) {
+    list.push({
+      client: inferenceClient,
+      model: process.env.RODNEY_MODEL || "anthropic-claude-4.6-sonnet",
+      label: "inference-primary",
+    });
+    list.push({
+      client: inferenceClient,
+      model: process.env.RODNEY_FALLBACK_MODEL || "anthropic-claude-haiku-4.5",
+      label: "inference-fallback",
+    });
+  }
   return list;
 }
 

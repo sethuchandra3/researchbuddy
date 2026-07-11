@@ -1,0 +1,355 @@
+{
+  "id": "2504.12267",
+  "title": "New Constraints on DMS and DMDS in the Atmosphere of K2-18 b from JWST MIRI",
+  "authors": [
+    "Nikku Madhusudhan",
+    "Savvas Constantinou",
+    "Måns Holmberg",
+    "Subhajit Sarkar",
+    "et al."
+  ],
+  "abstract": "The sub-Neptune frontier has opened a new window into the rich diversity of planetary environments beyond the solar system. The possibility of hycean worlds, with planet-wide oceans and H2-rich atmospheres, significantly expands and accelerates the search for habitable environments elsewhere. Recent JWST transmission spectroscopy of the candidate hycean world K2-18 b in the near-infrared led to the first detections of carbon-bearing molecules CH4 and CO2 in its atmosphere, with a composition consistent with predictions for hycean conditions. The observations also provided a tentative hint of dimethyl sulfide (DMS), a possible biosignature gas, but the inference was of low statistical significance. We report a mid-infrared transmission spectrum of K2-18 b obtained using the JWST MIRI LRS instrument in the \\sim 6-12 µm range. The spectrum shows distinct features and is inconsistent with a featureless spectrum at 3.4- \\sigma significance compared to our canonical model. We find that the spectrum cannot be explained by most molecules predicted for K2-18 b with the exception of DMS and dimethyl disulfide (DMDS), also a potential biosignature gas. We report new independent evidence for DMS and/or DMDS in the atmosphere at 3- \\sigma significance, with high abundance ( \\gtrsim 10 ppmv) of at least one of the two molecules. More observations are needed to increase the robustness of the findings and resolve the degeneracy between DMS and DMDS. The results also highlight the need for additional experimental and theoretical work to determine accurate cross sections of important biosignature gases and identify potential abiotic sources. We discuss the implications of the present findings for the possibility of biological activity on K2-18 b.",
+  "sections": [
+    {
+      "id": "s0",
+      "heading": "Introduction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The discoveries of temperate exoplanets orbiting nearby stars and the advent of the James Webb Space Telescope (JWST; Gardner et al., 2006) are opening the possibility of detecting biosignatures in habitable exoplanets. While habitable exoplanets orbiting Sun-like stars are still beyond the reach of JWST, such planets orbiting smaller M dwarf stars are within the range of observability with JWST. A number of low-mass exoplanets orbiting M dwarfs have been observed in recent years, highlighting their diversity and both the challenges and opportunities in characterizing their atmospheres with JWST (e.g. Madhusudhan et al., 2023b; Moran et al., 2023; May et al., 2023; Lim et al., 2023; Alderson et al., 2024; Holmberg & Madhusudhan, 2024; Benneke et al., 2024; Damiano et al., 2024; Scarsdale et al., 2024; Wallack et al., 2024; Alam et al., 2025)."
+        },
+        {
+          "type": "p",
+          "text": "The Hycean paradigm developed in recent years has the potential to significantly expand and accelerate the search for life elsewhere (Madhusudhan et al., 2021). Hycean worlds are planets with habitable ocean-covered surfaces and H2-rich atmospheres. Their lower densities, larger sizes and lighter atmospheres compared to Earth-like planets make hycean worlds more readily detectable and more conducive for atmospheric characterization. Similarly, their wider habitable zone compared to that of Earth-like planets also makes them more abundant, with over a dozen hycean candidates already identified (e.g. Madhusudhan et al., 2021; Fukui et al., 2022; Kawauchi et al., 2022; Mikal-Evans et al., 2023; Piaulet et al., 2023)."
+        },
+        {
+          "type": "p",
+          "text": "Early observations with JWST have bolstered the promise of this new avenue, starting with the candidate hycean world K2-18 b. The planet has a mass of 8.63 \\pm 1.35 M⊕ and a radius of 2.61 \\pm 0.09 R⊕ (Cloutier et al., 2019; Benneke et al., 2019a), and orbits in the habitable-zone of an M2.5V star (Montet et al., 2015; Cloutier et al., 2017; Sarkis et al., 2018). The bulk parameters of the planet are consistent with a degenerate set of internal structures, including a hycean world, a mini-Neptune or a gas dwarf, i.e. a rocky planet with a thick H2-rich atmosphere (Madhusudhan et al., 2020). Atmospheric observations are key to breaking the degeneracy."
+        },
+        {
+          "type": "p",
+          "text": "A transmission spectrum of K2-18 b obtained with the Hubble Space Telescope WFC3/G141 spectrograph (1.1-1.7 \\mu m) was initially used to infer the presence of water vapour (H2O) in its atmosphere (Benneke et al., 2019b; Tsiaras et al., 2019; Madhusudhan et al., 2020). However, significant degeneracies were found between potential absorption due to H2O and that due to methane (CH4) (Blain et al., 2021; Bézard et al., 2020) or contributions from stellar heterogeneities (Barclay et al., 2021). Transmission spectroscopy of K2-18 b with JWST led to the first detections of carbon-bearing molecules, CH4 and carbon dioxide (CO2), at 5- \\sigma and 3- \\sigma significance, respectively, in its H2-rich atmosphere (Madhusudhan et al., 2023b). The high sensitivity and wide wavelength range of the JWST spectrum helped resolve the previous CH4-H2O degeneracy, resulting in a strong detection of CH4 and nondetection of H2O. The nondetection of H2O was consistent with the low photospheric temperature retrieved, implying H2O condensation at the altitudes probed by the transmission spectrum (Madhusudhan et al., 2023a)."
+        },
+        {
+          "type": "p",
+          "text": "The retrieved atmospheric composition of K2-18 b also provided important constraints on its internal structure. The detections of CH4 and CO2 at significant abundances, along with the nondetections of ammonia (NH3) and carbon monoxide (CO) and the overall high CO2/CO ratio, are consistent with prior predictions for a hycean atmosphere (Hu, 2021; Tsai et al., 2021; Madhusudhan et al., 2023a). Other scenarios requiring a deep H2-rich atmosphere, such as a mini-Neptune or a gas dwarf discussed above, are inconsistent with the retrieved abundances (Madhusudhan et al., 2023b). For example, a mini-Neptune scenario (e.g., Wogan et al., 2024) is incompatible with most of the retrieved abundances, especially the low NH3 and high CO2/CO ratio (Glein, 2024; Cooke & Madhusudhan, 2024). Similarly, models considering NH3 depletion due to magma oceans (Shorttle et al., 2024) in the gas dwarf scenario were found to be inconsistent with mass and density constraints, among other factors, while also being inconsistent with the retrieved composition (Rigby et al., 2024). Therefore, presently, the atmospheric abundances of K2-18 b are best explained by a hycean world scenario and are incompatible with mini-Neptune or gas dwarf scenarios requiring a deep H2-rich atmosphere."
+        },
+        {
+          "type": "p",
+          "text": "Open questions remain on the possibility of habitable conditions on K2-18 b. While the atmospheric composition is consistent with predictions for hycean conditions (Madhusudhan et al., 2023b) and a large water inventory in the interior (Yang & Hu, 2024; Luu et al., 2024), the nature of the possible ocean beneath the H2-rich atmosphere is unknown. A habitable liquid water ocean requires an adequate albedo (AB) due to clouds/hazes (Piette & Madhusudhan, 2020; Madhusudhan et al., 2021), with the latest theoretical estimate of the required albedo being AB > 0.5-0.6 (Leconte et al., 2024), similar to that assumed for candidate hycean worlds (Madhusudhan et al., 2021). A cloud/haze-free atmosphere would render the surface too hot to be habitable and/or have water in a supercritical state (Madhusudhan et al., 2020; Piette & Madhusudhan, 2020; Scheucher et al., 2020; Innes et al., 2023; Pierrehumbert, 2023; Leconte et al., 2024). While the required albedo may be consistent with the evidence for clouds/hazes reported at the day-night terminator of K2-18 b (Madhusudhan et al., 2023b) and is within the range of AB of 0.3-0.8 known for atmospheres of most solar system planets, the dayside albedo of K2-18 b has not been measured directly."
+        },
+        {
+          "type": "p",
+          "text": "On the other hand, recent studies have also indicated the potential for biotic conditions on K2-18 b. The CH4 on K2-18 b may be contributed, partly or predominantly, from biogenic sources, similar to CH4 from methanogenic bacteria in the Earth’s atmosphere (Madhusudhan et al., 2023a, b; Wogan et al., 2024; Cooke & Madhusudhan, 2024). In particular, the detection of abundant CH4 alongside CO2 in a shallow H2-rich atmosphere is more easily explained by an inhabited hycean scenario than an uninhabited case (Wogan et al., 2024; Cooke & Madhusudhan, 2024). The CH4-CO2 pair has also been proposed as a promising biosignature for Earth-like habitable exoplanets, as may have been the case for the early Earth (Krissansen-Totton et al., 2018). However, the prospect of abiotically produced CH4 through atmospheric chemistry cannot be ruled out in the uninhabited hycean scenario for K2-18 b (Cooke & Madhusudhan, 2024). Another potential indication of biological activity was suggested by a weak ( \\lesssim 2- \\sigma ) inference of dimethyl sulfide (DMS) in K2-18 b with previous JWST observations (Madhusudhan et al., 2023b)."
+        },
+        {
+          "type": "p",
+          "text": "The tentative inference of DMS in K2-18 b opens an important debate on the possible presence of life on K2-18 b. On the one hand, the low detection significance highlights the challenges in detecting such molecules. In the case of the previous JWST observations of K2-18 b, the detection significance of DMS depended on the relative offsets between the spectra observed from different detectors on the JWST NIRISS and NIRSpec instruments, ranging from 2.4- \\sigma with no offsets to below 1- \\sigma for two offsets (Madhusudhan et al., 2023b). Another challenge is the strong degeneracy between the spectral features of DMS near 3.3 µm and 4.3 µm with strong features of CH4 and CO2 at overlapping wavelengths, as well as potential contributions from other hydrocarbons with strong features in the 3-5 µm range (Madhusudhan et al., 2023b; Tsai et al., 2024). On the other hand, a confident detection of a molecule like DMS would serve as a more robust biosignature than molecules like CH4, which are more easily detectable but may be present in abundance through abiotic chemistry."
+        },
+        {
+          "type": "p",
+          "text": "The robustness of DMS as a biosignature in H2-rich environments has been proposed extensively in the literature both for rocky planets (Domagal-Goldman et al., 2011a; Seager et al., 2013a; Catling et al., 2018; Schwieterman et al., 2018) and hycean worlds (Madhusudhan et al., 2021). Despite the low detection significance, the reported abundance constraints of DMS are physically plausible for realistic levels of biogenic sources (Madhusudhan et al., 2023b; Tsai et al., 2024). In particular, DMS mixing ratios as high as 10-2 are possible in K2-18 b for high biogenic fluxes of sulfur-based biosignature gases above \\sim 20 \\times Earth levels (Tsai et al., 2024)."
+        },
+        {
+          "type": "p",
+          "text": "In this work, we conduct an independent search for molecular species, including DMS, in K2-18 b in a different wavelength range using the JWST MIRI spectrograph. As discussed above, the previous tentative inference of DMS in K2-18 b was made using a near-infrared transmission spectrum in the 1-5 \\mu m range obtained with the JWST NIRISS and NIRSpec instruments. However, the evidence for DMS was affected by potential flux offsets between the different detectors (Madhusudhan et al., 2023b). Therefore, an independent search for DMS and other such molecules using a different instrument in a complementary spectral range is invaluable to assess both the significance of prior findings and to provide an independent line of evidence. Mid-infrared spectroscopy with JWST provides a promising avenue in this direction. In addition to providing a complementary spectral window ( \\sim 5-12 µm) to previous observations, this wavelength range also encompasses strong spectral features of DMS and several other biosignature gases (Domagal-Goldman et al., 2011a; Seager et al., 2013b; Schwieterman et al., 2018; Tsai et al., 2024)."
+        },
+        {
+          "type": "p",
+          "text": "We present a mid-infrared transmission spectrum of K2-18 b with JWST, the first for a habitable-zone exoplanet. This allows for an independent search for DMS and other biosignature gases in the atmosphere of K2-18 b as discussed above. In what follows, we present our observations, data reduction and light curve analyses in section 2. We discuss our retrieval approach and present the atmospheric inferences obtained from the transmission spectrum in section 3. We summarize our results and discuss the implications in section 4."
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "heading": "Observations and Data Reduction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We report a mid-infrared transmission spectrum of K2-18 b using the JWST MIRI low-resolution spectrograph (LRS) (Kendrew et al., 2015; Bouwman et al., 2023). The observations were conducted as part of JWST GO Program 2722 (PI: N. Madhusudhan). The observations were made in the slitless prism configuration with the F560W filter and the FASTR1 readout pattern. The target acquisition was conducted on the science target, the host star K2-18, which is a M2.5V dwarf star with J mag of 9.763 (Cloutier et al., 2017). The science exposure was performed between 23:13:29 UTC on April 25 2024 and 05:04:37 UTC on April 26 2024, for a duration of 5.85 hours with an in-transit duration of 2.68 hours and the remaining time providing the out-of-transit baseline. The science observation consists of a total of 5095 integrations with 25 groups per integration. The maximum fraction of saturation across the detector was calculated to be 51% using the JWST Exposure Time Calculator. The spectrum spans a wavelength range of \\sim 5-12 µm with an average native resolution of R \\sim 100. No high gain antenna (HGA) movement was reported during the observations. We carry out the data reduction and light-curve analysis in two parallel efforts, using independent pipelines and sensitivity analyses, as described below."
+        },
+        {
+          "type": "caption",
+          "text": "Figure 1: MIRI LRS white light curve of K2-18 b. The light curve is based on the time series spectroscopic data binned between 4.8-10 µm and discarding the first 250 integrations. The top panel shows the white light curve with and without binning, together with the median model fit. The lower panel shows the residuals after subtracting the model. The standard deviation of the residuals without binning is 471 ppm – corresponding to 1.25 \\times the expected noise level from photon noise and read n"
+        },
+        {
+          "type": "caption",
+          "text": "Table 1: Parameters estimated from the white light curve analysis of our JWST MIRI LRS observation of K2-18 b. The results are shown from the two independent data analyses. In both cases, the period was fixed to 32.940045 days (Benneke et al., 2019a) and wavelengths between 4.8-10 µm were used."
+        },
+        {
+          "type": "h3",
+          "text": "JExoRES Pipeline"
+        },
+        {
+          "type": "p",
+          "text": "We employ a modified version of the JExoRES pipeline (Holmberg & Madhusudhan, 2023; Madhusudhan et al., 2023b) adapted to MIRI LRS. First, we perform Stages 1-2 using the JWST Science Calibration Pipeline (Bushouse, 2020) to perform calibrations and the detector ramp fitting. In Stage 1, we perform the data quality initialization, electromagnetic interference (EMI) correction, saturation flagging, first and last frame flagging, linearity correction, reset switch charge decay (RSCD) correction, dark current subtraction, and ramp fitting. For this, we use both the standard linearity and RSCD corrections and a custom approach detailed in Appendix A.2, as pursued by several recent works (Kempton et al., 2023; Grant et al., 2023; Dyrek et al., 2024). Overall, we find that the approach to non-linearity correction has a minimal effect on the transmission spectrum of K2-18 b, as discussed in Appendix A.2 and illustrated in Figure 7. Next, we perform the flat-field correction in Stage 2."
+        },
+        {
+          "type": "p",
+          "text": "In Stage 3, we first use the gain reference file to convert the flux from DN/s to e-/s. We then search for cosmic ray hits by performing sigma-clipping on the time-series of each pixel by first removing a running median of seven integrations and using a threshold of 7- \\sigma . In addition, we also mask neighboring pixels surrounding detected outliers as well as pixels which have been flagged with any issue during Stages 1-2. We then correct for the background by subtracting the mean of the flux outside the trace, for each detector column and integration. To estimate the background, we use columns with pixel numbers 11-30 and 44-63, while not including bad pixels or outliers. Finally, we extract the spectra with optimal extraction (Horne, 1986) using the median of all integrations as a model for the point spread function for each spectral channel. For this, we use an aperture of 9 pixels. A box extraction approach produces very similar results, as shown in Figure 8. We reject additional outliers during optimal extraction and then in the light curves themselves using sigma-clipping with a running median filter."
+        },
+        {
+          "type": "p",
+          "text": "Next, we fit the light curves using the batman transit model (Kreidberg, 2015) and nested sampling with MultiNest (Feroz et al., 2009), assuming a circular orbit with a period from Benneke et al. (2019a). We first construct a white light curve by integrating the flux between 4.8-10 µm. Using this wavelength range gave slightly lower (5%) scatter compared to the full 4.8-12 µm range. For fitting the light curve we use normally distributed priors on the normalised semi-major axis a/R_{*} and the inclination i from the weighted average of the NIRISS and NIRSpec fits from Madhusudhan et al. (2023b). These orbital parameters are also consistent with pre-JWST measurements (Tsiaras et al., 2019; Benneke et al., 2019a). For the limb darkening, we use the quadratic law with the parameterisation and priors by Kipping (2013). We use wide uniform priors on all other parameters. For the baseline trend, we adopt an exponential and a linear component: [formula] , where \\tau is the time since the start of the observation, F_{\\mathrm{transit}} is the batman transit model, and F_{\\mathrm{out}} , \\alpha , \\gamma and \\epsilon are trend parameters. Furthermore, we mask the first 250 integrations (1034 seconds) to remove the strongest effect of the detector settling. Figure 1 shows the MIRI white light curve of K2-18 b together with our model fit. Moreover, we also fit for an error inflation parameter to account for additional white noise. The parameters measured from the white light curve fitting are shown in Table 1."
+        },
+        {
+          "type": "p",
+          "text": "Finally, we perform the spectroscopic light curve fitting, fixing a/R_{*} , i , the mid-transit time, and the two limb-darkening coefficients to the values obtained from the white light curve. We bin the light curves in wavelength prior to fitting, nominally with a width of 0.2 µm or 5 pixels, whichever contains the most pixels, as described in Appendix A.4. A minimum bin width of 0.2 µm is in line with the bin widths used in previous works, ranging between 0.15-0.5 µm (e.g. Bouwman et al., 2023; Grant et al., 2023; Bell et al., 2024; Powell et al., 2024). Due to instability of the spectrum below 5.6 µm as a function of binning, we disregard this part from further analysis to be conservative, as discussed in Appendix A.4. We again mask the first 250 integrations. We explore different choices of trends in Appendix A.5 and find that an exponential and a linear component produce a stable transmission spectrum when varying the number of integrations to mask at the start. Furthermore, we find evidence for time-correlated noise on the time scale of minutes, with increasing amplitude toward shorter wavelengths. Accounting for this additional noise using Gaussian processes (GPs), as described in Appendix A.7, we find that the transit depth uncertainty increases by around 30% at 6 µm, and less at longer wavelengths. We also test different assumptions for the limb darkening and find that it does not significantly alter the transmission spectrum, as shown in Appendix A.6. The resulting MIRI transmission spectrum of K2-18 b is shown in Figure 2."
+        },
+        {
+          "type": "caption",
+          "text": "Figure 2: The mid-infrared transmission spectrum of K2-18 b obtained with the JWST MIRI LRS instrument. The data points with error bars (in brown) show the observed spectrum as described in section 2.1. The horizontal errorbars correspond to the spectral bin width. The dark blue curve denotes the median retrieved spectral fit, while the two lighter shaded regions denote the 1- and 2- \\sigma intervals. The prominent features of DMDS and DMS are identified. Both molecules have overlapping spectral"
+        },
+        {
+          "type": "caption",
+          "text": "Figure 3: Spectral contributions of notable chemical species in the MIRI band. Each curve denotes the spectral contribution of a particular molecule to the model spectrum, as denoted in the legend. The mixing ratios of DMS and DMDS are set to a representative value of 5\\times 10^{-4} , while CH4 and CO2 are set to 10^{-2} , consistent with constraints obtained from previous near-infrared observations (Madhusudhan et al., 2023b). The black line denotes the resulting transmission spectrum with all"
+        },
+        {
+          "type": "h3",
+          "text": "JexoPipe Pipeline"
+        },
+        {
+          "type": "p",
+          "text": "We use a second pipeline, JexoPipe, a JWST data reduction framework previously applied to NIRSpec Prism and G395H data (Sarkar et al., 2024) and adapted here for MIRI LRS. Starting with the .uncal files, in stage 1 we utilise the official JWST Science Calibration Pipeline steps in the following sequence: group scale, data quality array initialisation, EMI correction, saturation flagging, first frame, last frame, reset, linearity correction, RSCD correction, dark subtraction, jump detection, ramp fitting and gain scale. Stage 1 ends with integration level .rateints files. After combining all stage 1 segments into a single .rateints file, we begin stage 2 by applying the JWST calibration pipeline steps: assign WCS and flat field. We then apply a custom bad pixel flagging step (Sarkar et al., 2024). This step applies NaN values to all pixels that have abnormal DQ flags as well as to 3- \\sigma outliers found on a row-by-row basis in each integration image. Next, we perform background subtraction per integration, using pixel columns 10-14 and 60-66. We apply an outlier mask, and then subtract the mean of each row from all pixel values in that row."
+        },
+        {
+          "type": "p",
+          "text": "We then apply a custom bad pixel correction step using a combination of temporal and spatial interpolation as described in Sarkar et al. (2024). Next, we detect remaining outliers on each integration by comparison with a rolling median (of 20 contiguous integrations), replacing pixel values \\pm 5- \\sigma from the rolling median with the median value. For stage 3, 1-D spectral extraction, for each integration, we apply an aperture of 9 pixel columns centred on the spectrum maximum and then perform optimal extraction (Horne, 1986). We obtain the wavelength for each pixel row from the mean of the wavelengths in that row after application of the aperture."
+        },
+        {
+          "type": "p",
+          "text": "We use the 1-D spectra time series to construct a white light curve (between 4.8-10 µm). We exclude the first 250 integrations, where the systematic trend is most extreme. We identify outliers on the white light curve, \\pm 2.5- \\sigma from a rolling median, and replace the 1-D spectra corresponding to these outliers with linearly interpolated spectra from adjacent integrations. We scale the error bars on the light curve points such that the average error bar equals the observed standard deviation of the scatter in the out-of-transit residuals. We use emcee (Foreman-Mackey et al., 2013) to perform a Markov Chain Monte Carlo parameter estimation of the white light curve, fitting for a transit model with quadratic limb-darkening generated by pylightcurve (Tsiaras et al., 2016) multiplied by a systematic trend consisting of an exponential term and a linear term (as in section 2.1). In the white light curve, we fit for R_{p}/R_{*} , mid-transit time, a/R_{*} , i , quadratic limb-darkening coefficients and four parameters for the trend. Uniform priors are used except for a/R_{*} and i , where we apply Gaussian priors based on values in Madhusudhan et al. (2023b) and use the Kipping parameterisation (Kipping, 2013) for limb-darkening priors. We fix the period to 32.940045 days (Benneke et al., 2019a), the argument of periastron to 90o and the eccentricity to 0. The white light curve parameter estimates are given in Table 1."
+        },
+        {
+          "type": "p",
+          "text": "We bin the spectral light curves following the same prescription as in section 2.1. We fit the spectral light curves in a similar manner to the white light curve, with the exception of the mid-transit time, a/R_{*} and i which we fix to the white light values. We also fix the limb darkening coefficients to those from the white light fit. To check the sensitivity of the transmission spectrum to the treatment of limb darkening, we also adopted fixed wavelength-dependent limb darkening coefficients from ExoTic-LD (Kurucz model; Grant & Wakeford, 2024). In doing so, we find that the spectra from the two treatments are consistent to well within the 1- \\sigma uncertainties."
+        },
+        {
+          "type": "p",
+          "text": "For each spectral light curve fit, the free parameters are R_{p}/R_{s} and the four systematic trend parameters. To account for time-correlated noise, we obtain the \\beta factor for each spectral light curve using the ‘time-averaging’ method to produce Allan deviation plots (Winn et al., 2007; Cubillos et al., 2017). The spectral light curve fits are then re-run after inflating the uncertainties on the original light curves by the corresponding \\beta value. The final transmission spectrum is shown in Figure 4."
+        },
+        {
+          "type": "h3",
+          "text": "Robustness of the Transmission Spectrum"
+        },
+        {
+          "type": "p",
+          "text": "The transmission spectra obtained from the two pipelines show good agreement, as shown in Figure 4, with all the data points agreeing within the 1- \\sigma uncertainties. While cross-checks between pipelines are useful to ensure consistency, it is also important to check the robustness and sensitivity of the transmission spectrum obtained using a given pipeline (Holmberg & Madhusudhan, 2024). In the present work, we conduct robustness tests with both pipelines across various considerations in the data reduction and analyses. We discuss some of these results in Appendix A. We demonstrate the robustness of the resultant transmission spectra to a wide range of parameters and assumptions in data reduction and light curve analyses. These include different treatments for the non-linearity correction, spectral extraction, spectral binning and limb-darkening, and different trends in light curve fitting, as well accounting for correlated noise."
+        },
+        {
+          "type": "p",
+          "text": "The resulting spectra are consistent within the uncertainties across all these cases, as shown in the Appendix A. The corresponding atmospheric constraints are also consistent across these cases, as shown in Table 2. We also conduct atmospheric retrievals with spectra from both JExoRES and JexoPipe to ensure consistency in the overall conclusions. The abundances and detection significances obtained from each reduction are summarised in Table 2 and posterior distributions are shown in Figure 5. This is further discussed below."
+        },
+        {
+          "type": "caption",
+          "text": "Figure 4: Demonstration of the stability of the MIRI transmission spectrum of K2-18 b using two independent data reduction pipelines. The spectra from the JExoRES and JexoPipe pipelines are shown in purple and orange, respectively, and are further described in sections 2.1 and 2.2."
+        },
+        {
+          "type": "caption",
+          "text": "Table 2: Retrieved abundance estimates and detection significances from the MIRI transmission spectrum of K2-18 b."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "heading": "Atmospheric Retrieval",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We conduct atmospheric retrievals to derive the properties of the day-night terminator region of the atmosphere of K2-18 b using the MIRI transmission spectrum. We follow the retrieval approach of the previous analyses of JWST observations of K2-18 b (Madhusudhan et al., 2023b). We perform atmospheric retrieval using the AURA retrieval framework (Pinhas et al., 2019), as implemented in recent works (Constantinou et al., 2023; Madhusudhan et al., 2023b; Constantinou & Madhusudhan, 2024). The terminator of K2-18 b is modelled as a plane-parallel atmosphere in hydrostatic equilibrium with a non-uniform thermal structure, described using the parametric temperature profile of Madhusudhan & Seager (2009) with six free parameters. The transmission spectrum is computed considering radiative transfer along the slant path length across the terminator."
+        },
+        {
+          "type": "p",
+          "text": "The opacity is contributed by molecular line absorption as well as collision-induced absorption due to H2-H2 and H2-He (Borysow et al., 1988; Orton et al., 2007; Abel et al., 2011; Richard et al., 2012). We consider molecular line opacities from prominent molecules possible in temperate H2-rich atmospheres, as discussed below, with the volume mixing ratio of each molecule being a free parameter in the model. The atmospheric composition is treated as uniform across the observable photosphere."
+        },
+        {
+          "type": "p",
+          "text": "We consider a wide range of molecules to explain the features in the observed spectrum. Across the different models considered in this work we explore 20 molecules, as discussed below and in Appendix B. The model also includes extinction from clouds/hazes, following the parametric prescription outlined in Pinhas et al. (2019), involving four free parameters corresponding to a cloud-top pressure, amplitude and slope of a Rayleigh-like haze, and a coverage fraction. Other free parameters in the model include a reference pressure ( P_{\\rm ref} ) corresponding to the white light planet radius, using the stellar radius from Benneke et al. (2019a), and a constant vertical offset added to the spectrum from a given instrument, in this case MIRI LRS. We note that the offset is degenerate with P_{\\rm ref} . Nevertheless, we include both parameters to maintain uniformity in analyses with prior works, and in case an offset is needed that is greater than the allowed pressure range for P_{\\rm ref} . In total, the number of free parameters in a typical model is N = N_{\\rm mol} + 12, where N_{\\rm mol} is the number of molecules."
+        },
+        {
+          "type": "p",
+          "text": "The Bayesian inference and parameter estimation is conducted using the nested sampling algorithm (Skilling, 2004) through the MultiNest implementation (Feroz et al., 2009; Buchner et al., 2014). Across our retrievals, we use 2000 live points which ensures fine sampling of the parameter space and accurate estimation of the Bayesian evidence. For robustness, we also perform several of the canonical retrievals discussed below using the UltraNest implementation (Buchner, 2021), as used in the VIRA retrieval framework, the most recent variant of AURA (Constantinou & Madhusudhan, 2024)."
+        },
+        {
+          "type": "caption",
+          "text": "Figure 5: Retrieved posterior probability distributions for DMDS and DMS from our canonical retrievals described in Section 3, using data from the JExoRES (top) and JexoPipe (bottom) pipelines. The posteriors shown in blue correspond to the canonical retrieval containing both DMDS and DMS, along with CH4 and CO2. The other two cases show the retrievals with only one of the two molecules, DMDS or DMS, included in the canonical retrieval with all other parameters remaining unchanged. The orange di"
+        },
+        {
+          "type": "h3",
+          "text": "Retrieval Setup and Model Selection"
+        },
+        {
+          "type": "p",
+          "text": "The present transmission spectrum is the first mid-infrared ( \\sim 6-12 µm) transmission spectrum of a candidate hycean world ever observed. Given the wide range of molecules that could contribute spectral features in this range, we follow a hierarchical Bayesian approach to determine the preferred model to explain the observations. We carry out the model selection in two stages, with the model parameters in the retrieval at the second stage being informed by the first stage, as discussed below. At the end, the preferred model given the data is chosen by comparing the Bayesian evidence between the two stages."
+        },
+        {
+          "type": "p",
+          "text": "We first conduct a maximal retrieval using the JExoRES spectrum, with an atmospheric model that includes a substantially expanded set of molecules over previous atmospheric retrievals of K2-18 b. We consider 20 molecules, including 11 molecules considered in previous work (Madhusudhan et al., 2023b) and 9 new ones. The previous molecules include H2O, CH4, NH3, CO, CO2, HCN, (CH3)2S (DMS), CH3Cl, CS2, OCS and N2O. The molecules H2O, CH4, NH3, CO, CO2, and HCN have been predicted to be the prominent C-, O- and N-bearing species in temperate H2-rich atmospheres, including hycean worlds (e.g., Madhusudhan et al., 2021; Yu et al., 2021; Hu, 2021). The remaining molecules (CH3)2S (DMS), CH3Cl, CS2, OCS, N2O have been predicted as observable potential biosignatures in H2-rich atmospheres of habitable super-Earths (Segura et al., 2005; Domagal-Goldman et al., 2011a; Seager et al., 2013a) and hycean worlds (Madhusudhan et al., 2021)."
+        },
+        {
+          "type": "p",
+          "text": "The new molecules include other prominent sulfur-based molecules, hydrocarbons, and potential biomarkers (e.g., Schwieterman & Leung, 2024; Tsai et al., 2024; Sousa-Silva et al., 2020): H2S, SO2, C2H2, C2H4, C2H6, (CH3)2S2 (dimethyl disulfide; DMDS), CH3SH, PH3 and CH3OH. Of these molecules, DMDS, CH3SH, C2H6 and PH3 are particularly relevant as potential biomarkers both in hycean as well as terrestrial-like atmospheres as suggested in recent studies (e.g. Sousa-Silva et al., 2020; Schwieterman & Leung, 2024; Tsai et al., 2024). Of all the molecules considered, DMS, DMDS, CH3SH, CH3Cl and N2O are expected to be the most reliable biosignatures in hycean conditions, whereas others may have alternate abiotic sources (Segura et al., 2005; Domagal-Goldman et al., 2011a; Seager et al., 2013a; Schwieterman & Leung, 2024; Tsai et al., 2024)."
+        },
+        {
+          "type": "p",
+          "text": "The retrieval obtains a good fit to the spectrum with the model being inconsistent with a featureless spectrum, i.e. a flat line, at 3- \\sigma significance. However, an inspection of the posteriors reveals only one well-constrained peak for the molecule DMDS, while all the other molecules are unconstrained, as shown in Appendix B. We also do not find significant constraints for cloud/haze parameters that could affect the mid-infrared spectrum."
+        },
+        {
+          "type": "p",
+          "text": "We further conduct a retrieval without DMDS and find a well-constrained peak in the posterior for DMS. We find that DMS replaces DMDS due to the strong degeneracy between the two molecules in the MIRI wavelength range where prominent peaks are evident in the data, as shown in Figure 2. The spectral contributions due to the two molecules are shown in Figure. 3. Thus, the retrievals highlight the degeneracy between DMS and DMDS, with a higher preference for DMDS from this dataset. On removing both molecules from the retrieval we find no significant constraints on any of the remaining molecules. The model without DMS or DMDS does not provide a good fit to the data, with the maximal model preferred over this model at 2- \\sigma . Moreover, the model without DMS and DMDS is only marginally favoured over a flat spectrum below 2- \\sigma significance. The data therefore show notable evidence for only two molecules, DMDS and DMS."
+        },
+        {
+          "type": "p",
+          "text": "Informed by the above retrieval, we arrive at a canonical model that includes DMS and DMDS. We additionally include CH4 and CO2, which have been detected in K2-18 b previously in the near-infrared (Madhusudhan et al., 2023b). In total, our canonical model includes 16 free parameters: 4 molecular mixing ratios, 6 for the P - T profile, 4 for the cloud parameters, 1 for P_{\\rm ref} and 1 for the offset on the MIRI data. The retrieval with this model provides a comparable fit to the data as the maximal model above, but with a higher Bayesian evidence due to the lower number of unconstrained free parameters. The canonical model is preferred over the maximal model by 2.2- \\sigma and over a featureless spectrum, i.e., a flat line, by \\geq 3.4- \\sigma . For computing the Bayesian evidence for the one-parameter model of a featureless spectrum, we assume uniform priors on the model transit depth with a range of \\pm N ppm relative to the measured white light transit depth. Considering the span of transit depths in the observed spectrum of \\sim 600 ppm, we explore values of N between 600-2000 ppm. Over this range, the canonical model is preferred over a featureless spectrum at 3.4-3.8 \\sigma , with higher preference obtained for wider priors, i.e., larger N . We adopt the minimum preference of 3.4- \\sigma as a conservative estimate."
+        },
+        {
+          "type": "p",
+          "text": "As with the maximal model, we find that only DMDS is constrained by this dataset while other parameters remain unconstrained. We also recover the degeneracy between DMDS and DMS, such that when DMDS is excluded from the model DMS is recovered. In what follows, we present the detection significances of the molecules and atmospheric constraints with the canonical model using the spectra obtained from both pipelines."
+        },
+        {
+          "type": "h3",
+          "text": "Atmospheric Constraints"
+        },
+        {
+          "type": "p",
+          "text": "The spectrum provides important insights into the atmospheric composition of K2-18 b. The retrieved spectral fit along with the 1- and 2- \\sigma contours using the JExoRES spectrum is shown in Figure 2. As noted above, the present MIRI spectrum spans a wavelength range of \\sim 5.8-12 µm which encompasses strong spectral features of several prominent molecules expected in temperate H2-rich atmospheres, as shown in Figure 3 and 14. However, as discussed above, we are unable to explain the observed features with most of the 20 prominent species considered, with the maximal retrieval finding no significant evidence for 18 of the 20 species. The only species with notable evidence are DMDS and DMS. Both molecules have a similar double-peak feature between 6.8-8 µm, with additional broad peaks around 9.8 µm and 10.5 µm for DMS and DMDS, respectively, which are consistent with the observed spectrum. Additionally, the amplitudes of the observed spectral features, of \\sim 300-400 ppm, in the present MIRI band are significantly larger compared to the \\sim 200 ppm amplitudes seen in previous near-infrared ( \\sim 1-5 µm) observations with the NIRISS and NIRSpec instruments (Madhusudhan et al., 2023b). While previous observations detected strong spectral features of CH4 and CO2 in the near-infrared, neither of them are detectable in the present spectrum, as can be seen in Figure 14. While CO2 does not have strong spectral features in the MIRI LRS range, those of CH4 are dwarfed by stronger contributions due to DMS and/or DMDS. As such, the contributions of both CO2 and CH4 at previously reported mixing ratios ( \\sim 1%) are insufficient to explain the present data in the MIRI band, as can be seen in Figure 3. Instead, contributions from DMDS and DMS at volume mixing ratios of \\sim 10-5-10-3 readily explain the data due to their strong absorption cross sections in the MIRI band."
+        },
+        {
+          "type": "p",
+          "text": "The spectrum provides notable constraints on the presence and abundance of DMDS and DMS in the atmosphere, as shown in Figure 5. Due to the degeneracy between the spectral features of DMDS and DMS in the MIRI band, as shown in Figure 3, it is difficult to robustly distinguish between them at the current data quality. Considering the canonical model, where both DMDS and DMS are present, DMDS is preferred at a somewhat higher significance ( \\sim 2\\sigma ) compared to DMS for the JExoRES spectrum. The presence of DMDS in the model is favored at 2- \\sigma significance compared to the model without DMDS. DMS is not well constrained, and the model with DMS is preferred over the model without DMS at only 1- \\sigma significance. The lack of either molecule in the model is compensated by the other due to the degeneracy in their spectral features as discussed above. However, the combination of DMDS and DMS together is favored at 3.2- \\sigma over a model with neither molecule included (Table 2)."
+        },
+        {
+          "type": "p",
+          "text": "On the other hand, retrievals with models including only one of the two molecules at a time show relatively high detection significances for both molecules individually. For example, considering the canonical model with only DMDS included, i.e. DMS removed, we find that the detection significance for DMDS is 3.2- \\sigma . Similarly, the canonical model with only DMS included, i.e. DMDS removed, provides a detection significance for DMS of 2.9 \\sigma . Therefore, the present data provide evidence for the presence of DMDS and/or DMS at 2.9-3.2 \\sigma significance."
+        },
+        {
+          "type": "p",
+          "text": "The retrieved posterior distributions for the volume mixing ratios of DMDS and DMS shown in Figure 5 reflect the degeneracy between the two species that is apparent from their spectral contributions as discussed above. When both molecules are included in the model, the spectral contribution of DMDS dominates over that of DMS. The posterior of DMDS shows a clear peak, albeit with a low-abundance tail due to the degeneracy with DMS. The abundance of DMDS is retrieved to be \\log(X_{\\mathrm{DMDS}}) = -3.48 {}^{+1.24}_{-2.27} while DMS is unconstrained. Here, X_{\\mathrm{DMDS}} is the volume mixing ratio of DMDS. In retrievals with only one of the two molecules present, the posterior of that molecule shows a single well-constrained peak with no low-abundance tail. In such retrievals, the abundances are retrieved to be \\log(X_{\\mathrm{DMDS}}) = -3.25 {}^{+1.17}_{-1.30} and \\log(X_{\\mathrm{DMS}}) = -3.42 {}^{+1.16}_{-1.44} , as shown in Table 2. Lastly, we repeat the canonical retrieval using the UltraNest nested sampling implementation, and find consistent abundance estimates and detection significances to our standard retrievals using the MultiNest implementation."
+        },
+        {
+          "type": "p",
+          "text": "We also conduct another canonical retrieval with our other spectrum obtained with the JexoPipe pipeline. We find that the detection significances and abundance estimates of DMS and DMDS are consistent with those obtained using the JExoRES spectrum, as shown in Table 2. We find the combined detection significance of DMDS and DMS to be 3.2- \\sigma , similar to that obtained with the canonical retrieval with the JExoRES data. The abundances are slightly lower but still consistent. For this canonical model, where DMS and DMDS are both included, the posteriors for DMS and DMDS are comparable, as shown in Figure 5. Using the individual DMS-only or DMDS-only cases, we find evidence for each of the molecules at 3- \\sigma significance and similar abundance estimates to the corresponding JExoRES cases: \\log(X_{\\mathrm{DMDS}}) = -3.45^{+1.13}_{-1.30} and \\log(X_{\\mathrm{DMS}}) = -3.53^{+1.03}_{-1.33} . Therefore, across all our retrievals we detect DMDS and/or DMS at 3- \\sigma significance."
+        },
+        {
+          "type": "p",
+          "text": "The observations do not provide significant constraints on any of the other molecules or atmospheric properties but are consistent with previous inferences from the near-infrared JWST spectrum (Madhusudhan et al., 2023). Specifically, we do not obtain significant constraints on CH4 or CO2 which have previously been detected. However, the upper-limits we retrieve for the abundances of both molecules are consistent with their previous abundance estimates. The contributions from both molecules at previously measured abundances of \\sim 1% each are insufficient to explain the observed spectral features in the present spectral range with JWST MIRI (6-12 µm). While CO2 has no strong spectral features in this range, those of CH4 are significantly weaker compared to those of DMDS and/or DMS, as shown in Figure 3. The abundances we retrieve for DMS and/or DMDS are also consistent with the constraints for DMS reported in previous work."
+        },
+        {
+          "type": "p",
+          "text": "Similarly, we do not find significant evidence for spectral contributions due to clouds/hazes in the MIRI band and none of the cloud parameters are constrained. We find the photospheric pressure corresponding to the white light radius to be \\log ( P_{\\rm ref} /bar) = -4.32_{-0.93}^{+1.15} , with no significant offset to the data retrieved. The offset is retrieved to be 12 {}^{+51}_{-58} ppm, which is consistent with zero within the 1-sigma uncertainties. The photospheric temperature at 1 mbar at the terminator is also weakly constrained to be 422_{-133}^{+141} K, which is somewhat higher but consistent with previous estimate in the near-infrared to within the 1- \\sigma uncertainties."
+        },
+        {
+          "type": "p",
+          "text": "For additional robustness, we conduct retrievals on the transmission spectra obtained using a wide range of assumptions for the data reduction and analyses. Using JExoRES, we explore differences in the treatment of systematic trends and time-correlated noise, as well as different wavelength limits and the effect of spectral binning, as discussed in the Appendix. Across all of these cases, we find consistent abundance constraints and detection significances of DMDS and/or DMS, ranging from 2.9-3.4 \\sigma , as outlined in Table 2."
+        },
+        {
+          "type": "caption",
+          "text": "Figure 6: Leave-one-out analysis for the MIRI transmission spectrum of K2-18 b. The black data points with error bars show the observed transmission spectrum obtained using the JExoRES pipeline. The center shading of each datapoint denotes the corresponding elpd difference ( \\Delta elpd) between the canonical atmospheric model with DMS and DMDS, and one with both molecules absent. Redder points denote a high and positive \\Delta elpd, indicating that the canonical model is more capable of predict"
+        },
+        {
+          "type": "h3",
+          "text": "Leave-one-out Analysis"
+        },
+        {
+          "type": "p",
+          "text": "As a further robustness check for our findings, we carry out leave-one-out cross-validation using the JExoRES data. We follow Vehtari et al. (2017) and Welbanks et al. (2023), calculating the expected log pointwise predictive density (elpd) for each data point. For each data point d_{i} , we carry out an atmospheric retrieval with all other points considered and that data point removed. We do not make any approximations, e.g. Pareto-smoothed importance sampling, and instead directly compute the elpd of each datapoint by carrying out a retrieval considering all other data points. Using the retrieved posterior samples, we compute the probability density of the i^{\\mathrm{th}} point d_{i} , given a retrieval using model \\mathcal{M} on all other data d_{-i} resulting in a total of S samples of the parameter space for each retrieval. The elpd metric provides an indication of how well each data point can be predicted by the model and therefore quantifies the performance of the model. The metric is given by:"
+        },
+        {
+          "type": "p",
+          "text": "where the parameters corresponding to the j^{\\mathrm{th}} sample in each retrieval are denoted as \\theta_{j} . We perform the above calculation for two atmospheric models: the canonical model described in Section 3 and one with DMS and DMDS absent. As such we run a total of two retrievals per data point. The difference between the elpd values of the two models, \\Delta\\mathrm{elpd}_{i} , indicates their relative performance. Conversely, in this case \\Delta\\mathrm{elpd}_{i} serves as an indication for the relative contributions of the data points towards the present detection of DMDS and DMS. The pointwise \\Delta\\mathrm{elpd}_{i} is shown in Figure 6. We find that most points have \\Delta\\mathrm{elpd}_{i} values above zero, indicating that the detection of DMDS and DMS combined is driven by multiple data points to various extents. \\Delta\\mathrm{elpd}_{i} is highest for two data points near 7 µm and another two points just under 9 µm. This indicates that these points are better predicted by a model that includes DMDS and DMDS than a model without the two molecules. Conversely, the data point below 6 µm has the most negative \\Delta\\mathrm{elpd}_{i} , indicating that it is better predicted by a model without DMS and DMDS. Overall, our leave-one-out analysis indicates that the present detection is unlikely to be the result of localized systematics or individual outlier points."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "heading": "Summary and Discussion",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We report a mid-infrared transmission spectrum of the candidate hycean world K2-18 b observed with the JWST MIRI LRS instrument, the first for a habitable-zone sub-Neptune. The spectrum shows multiple spectral features between \\sim 6-11 µm which are best explained by a combination of DMDS and DMS in the atmosphere, both molecules uniquely produced by life on Earth and predicted as promising biosignatures in habitable exoplanets (Domagal-Goldman et al., 2011b; Catling et al., 2018; Schwieterman et al., 2018; Seager et al., 2013b; Tsai et al., 2024). We detect the combination of DMDS and/or DMS at a significance of 2.9-3.2 \\sigma across the canonical retrievals reported in this work. In the absence of DMDS, the spectral features can also be explained to a large extent by DMS, and vice versa, due to degeneracy between the spectral features of DMS and DMDS in the mid-infrared. In retrievals considering only one of the two molecules (DMS or DMDS) in the canonical model, DMS is retrieved at 2.9-3.0 \\sigma significance and DMDS is retrieved at 3.0-3.2 \\sigma significance."
+        },
+        {
+          "type": "p",
+          "text": "The observations provide limited constraints on other atmospheric properties. In the absence of DMS and DMDS, no significant detections or abundance constraints are obtained on any of the remaining molecules considered in the retrievals. The strong DMDS and/or DMS features dominate over potential molecular contributions from any other species in this wavelength range. We find high abundances of DMDS and/or DMS with volume mixing ratios of \\gtrsim 10^{-5} (10 ppmv) within the 1- \\sigma uncertainties, and a MIRI photospheric temperature of 422^{+141}_{-133} K at 1 mbar for the canonical retrieval. The DMS abundance and photospheric temperature are consistent with but somewhat higher than those derived from previous NIRISS and NIRSpec observations in the 1-5 µm region (Madhusudhan et al., 2023b). On the other hand, both the retrieved mixing ratios and temperature are strongly dependent on the available cross-sections of DMDS and DMS which are obtained for an Earth-like atmosphere at nearly STP conditions, using N2 as a broadener (Gordon et al., 2017). Therefore, the derived abundances and temperatures may be impacted by the assumed collisional broadening factors and/or the adopted molecular cross-sections, in general."
+        },
+        {
+          "type": "p",
+          "text": "Overall, our findings continue to raise the prospects of possible biological activity on K2-18 b and motivate new experimental and theoretical work for detailed characterisation of its atmospheric properties. In what follows, we discuss the implications and future directions."
+        },
+        {
+          "type": "h3",
+          "text": "Biosignature on a Hycean World"
+        },
+        {
+          "type": "p",
+          "text": "Our findings provide new independent evidence for the possibility of a biosphere on K2-18 b. As discussed in Section 1, the detection of carbon-bearing molecules, CH4 and CO2, and nondetections of NH3 and CO (Madhusudhan et al., 2023b), are consistent with prior predictions for a hycean world and inconsistent with mini-Neptune or gas-dwarf scenarios (Cooke & Madhusudhan, 2024; Rigby et al., 2024). The previous observations also showed tentative hints of DMS, a possible biosignature molecule in the atmosphere (Madhusudhan et al., 2023b), but the evidence was weak. This new independent evidence for the presence of DMS and/or DMDS at 2.9-3.2 \\sigma adds to the tentative inference of DMS reported previously and bolsters the chances of a biosphere on K2-18 b."
+        },
+        {
+          "type": "p",
+          "text": "Recent photochemical modeling of K2-18 b suggests that large quantities of DMS and DMDS, with mixing ratios up to 10-2 can accumulate in the atmosphere for assumed biogenic oceanic fluxes of these gases of \\gtrsim 20 \\times Earth levels (Tsai et al., 2024). Such quantities are consistent with our current MIRI results for DMDS and DMS and with previous abundance constraints of DMS (Madhusudhan et al., 2023b). These otherwise photochemically fragile molecules survive in the Tsai et al. (2024) models under high surface-flux emission conditions: (1) because of the favorable ultraviolet spectral energy distribution of M-dwarf stars (see also Segura et al., 2005; Domagal-Goldman et al., 2011a; Seager et al., 2013a), (2) because DMS and DMDS can eventually self-shield, as well as shield molecules such as CO2 from photolysis when their column density is high enough, significantly cutting down on their photochemical destruction pathways (Tsai et al., 2024), and (3) because the models assume that biogenically emitted DMS and DMDS do not have a return sink to the ocean, allowing the abundance to build up over time. Our present MIRI abundance estimates of DMS and/or DMDS at mixing ratios of \\sim 10-5-10-3 could, therefore, imply very strong biological activity on the planet in comparison to Earth. We note however, that DMDS could potentially condense on K2-18 b (see Sagan & Khare, 1971; Khare et al., 1978; VonNiederhausern et al., 2006), depending on tropopause temperatures, restricting its gas-phase abundance in the stratospheric region that is probed in the transit observations. Therefore, abundances significantly higher than \\sim 10^{-4} - 10-3 may be difficult to achieve if the stratosphere is too cold."
+        },
+        {
+          "type": "p",
+          "text": "On the other hand, it is possible that the abundance estimates derived in our work are strongly influenced by uncertainties in spectral parameters and cross-sections of these molecules used in the models. The derived abundance and temperature are strongly dependent on the absorption cross-section of a molecule detected. For both DMDS and DMS, only limited cross sections are available in the literature (Gordon et al., 2017), which are derived experimentally assuming an Earth-like N2-rich background atmosphere at nearly STP conditions. It is possible that the collisional broadening factors and cross-sections may be different for an H2-rich background gas at lower pressures probed in the present transmission spectroscopy. Therefore, our results highlight the acute need for laboratory and theoretical work to derive high-fidelity absorption cross sections for these and other biosignature molecules to enable their robust detection and abundance estimates in habitable exoplanets."
+        },
+        {
+          "type": "h3",
+          "text": "False Positives"
+        },
+        {
+          "type": "p",
+          "text": "As with any potential biosignature molecule, it is important to ask whether there can be abiotic sources of DMS and DMDS in a temperate H2-rich atmosphere that could explain the observations. Both DMS and DMDS have been predicted to be robust biosignatures for Earth-like planets as well as planets with H2-rich atmospheres, including super-Earths and hycean worlds (Domagal-Goldman et al., 2011a; Seager et al., 2013a; Catling et al., 2018; Schwieterman et al., 2018; Madhusudhan et al., 2021). Their identification as robust biosignatures is due to the fact that on Earth, both molecules are uniquely produced by life (particularly marine biota) in small quantities of \\lesssim 1 ppb by volume and are not supplied by abiotic photochemistry. Nevertheless, here we explore some potential alternatives."
+        },
+        {
+          "type": "p",
+          "text": "Experimental studies have demonstrated the feasibility of forming several organosulfur compounds abiotically using ultraviolet irradiation or electric discharges of gaseous mixtures containing H2S and CH4 (e.g., Raulin & Toupance, 1975; He et al., 2020; Vuitton et al., 2021; Reed et al., 2024). In particular, some of these studies have demonstrated the production of both DMS (Raulin & Toupance, 1975; Reed et al., 2024) and DMDS (Sagan & Khare, 1971; Khare et al., 1978) in gas mixtures containing both CH4 and H2S, arguing in favor of their possible abiotic production in reduced planetary atmospheres. However, both DMS and DMDS are highly reactive and have very short lifetimes in the above experiments (i.e., a few minutes) and in the Earth’s atmosphere (i.e., between a few hours to \\sim 1 day), due to various photochemical loss mechanisms (e.g. Seager et al., 2013b). Thus, the resulting DMS and DMDS mixing ratios in the current terrestrial atmosphere are quite small (typically \\lesssim 1 ppb), despite continual resupply by phytoplankton and other marine organisms."
+        },
+        {
+          "type": "p",
+          "text": "Therefore, sustaining DMS and/or DMDS at over 10-1000 ppm concentrations in steady state in the atmosphere of K2-18 b would be implausible without a significant biogenic flux. Moreover, the abiotic photochemical production of DMS in the above experiments requires an even greater abundance of H2S as the ultimate source of sulfur — a molecule that we do not detect — and requires relatively low levels of CO2 to curb DMS destruction (Reed et al., 2024), contrary to the high reported abundance of CO2 on K2-18 b (Madhusudhan et al., 2023b)."
+        },
+        {
+          "type": "p",
+          "text": "Another recent study has reported evidence for the presence of DMS on the comet 67P/Churyumov–Gerasimenko (Hänni et al., 2024), motivating the possibility of a potential abiotic source through cometary delivery to the exoplanet’s atmosphere. Comets are also known to contain other ices and sublimated gases that might be considered biosignatures if present in an exoplanet atmosphere, including O2, CH4, and CH3Cl (Bieler et al., 2015; Fayolle et al., 2017; Rubin et al., 2019). However, cometary delivery is implausible to explain such molecules in planetary atmospheres due to the insufficient contribution that trace species within a comparatively small comet would add to the much more massive planetary atmosphere (e.g. Leung et al., 2022; Court & Sephton, 2012; Felton et al., 2022). Moreover, molecules such as DMS and DMDS would be shock heated during a hypervelocity cometary impact and its related plume splashback phase, which would reset the bulk composition to simpler molecules that are more stable in thermochemical equilibrium at high temperatures and (for the splashback phase) low pressures (Zahnle, 1996). Therefore, DMS and DMDS would not be delivered at any significant measurable levels through such a process. We also note that DMDS has not been reported in the comet 67P. In summary, cometary impacts cannot be responsible for the relatively large DMS and/or DMDS abundance inferred from the present MIRI retrievals."
+        },
+        {
+          "type": "h3",
+          "text": "Future Directions"
+        },
+        {
+          "type": "p",
+          "text": "A conclusive identification of a biosignature necessitates a robust assessment of various factors, including the robustness of the detections, the environmental context, and potential false positives (e.g. Meadows et al., 2022; Schwieterman et al., 2018). It is widely recognized that the detection of a biosignature is unlikely to be instantaneous or unambiguous in the first instance, rather relying on continued accumulation of evidence and addressing the above factors (Meadows et al., 2022). Our study is the first formal step in this direction, building on the first possible hints of DMS reported in our previous work (Madhusudhan et al., 2023b) and further evidence of DMDS and/or DMS with a higher significance seen in the present observations. Finally, our present detection based on multiple spectral features with a different instrument in a different spectral range from previous work provides an important independent line of evidence in this direction."
+        },
+        {
+          "type": "p",
+          "text": "Further work is needed to robustly verify the current findings. More observations are required to robustly demonstrate the repeatability of our present findings, rule out potentially unaccounted for instrumental systematics, as well as increasing the detection significances. While DMDS and DMS best explain the current observations, their combined detection significance is \\sim 3- \\sigma which is at the lower end of robustness typically required for scientific evidence. The significance can be readily increased to a 4-5 \\sigma level by a modest amount of additional JWST time, e.g. between 1-3 additional transits with MIRI, i.e. only \\sim 8-24 hours. Secondly, while we have explored 20 prominent molecules to fit the spectrum, our search may still not be fully exhaustive. Therefore, future studies could investigate other potential molecules that could explain the data. At the same time, as discussed above, new experimental and theoretical studies are needed to determine accurate absorption cross sections for DMDS and DMS, and other potential biosignature molecules, for conditions relevant to candidate hycean worlds like K2-18 b. Future laboratory experiments and/or theoretical modeling is also needed to fully explore possible photochemical mechanisms for producing DMS and DMDS in dry, methane-rich, reduced environments to address potential abiotic sources of these molecules."
+        },
+        {
+          "type": "p",
+          "text": "Overall, our findings present an important step forward in the search for signatures of life on exoplanets. However, robustly establishing both the veracity of the present findings and their possible association with life on K2-18 b needs a dedicated community effort in multiple directions — observational, theoretical and experimental. Observations with JWST are already demonstrating that possible hycean worlds indeed significantly expand and accelerate the search for life elsewhere. The central question now is whether we are prepared to identify the signatures of life on such worlds. The opportunity is at our doorstep."
+        },
+        {
+          "type": "p",
+          "text": "Acknowledgements: This work is based on observations made with the NASA/ESA/CSA James Webb Space Telescope as part of Cycle 1 GO Program 2722 (PI: N. Madhusudhan). We thank NASA, ESA, CSA, STScI and everyone whose efforts have contributed to the JWST, and the exoplanet science community for the thriving current state of the field. This work is supported by the UK Research and Innovation (UKRI) Frontier Grant (EP/X025179/1), PI: N. Madhusudhan. N.M. thanks Tony Roman and Sara Kendrew at STScI for their help with planning our JWST observations. J.M. acknowledges support from JWST-GO-02722, which was provided by NASA through a grant from the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-03127. We thank the anonymous reviewer for their valuable comments on the manuscript."
+        },
+        {
+          "type": "p",
+          "text": "This work was performed using resources provided by the Cambridge Service for Data Driven Discovery operated by the University of Cambridge Research Computing Service (www.csd3.cam.ac.uk), provided by Dell EMC and Intel using Tier-2 funding from the Engineering and Physical Sciences Research Council (capital grant EP/P020259/1), and DiRAC funding from STFC (www.dirac.ac.uk)."
+        },
+        {
+          "type": "p",
+          "text": "Author Contributions: N.M. conceived, planned and led the project. N.M. led the JWST proposal with contributions from S.C., S.S., A.P. and J.M. N.M., S.S. and M.H planned the JWST observations. N.M., M.H. and S.S. conducted the data reduction and spectroscopic analyses. N.M. and S.C. conducted the atmospheric retrievals. N.M. and J.M. conducted the theoretical interpretation. N.M. led the writing of the manuscript with contributions and comments from all authors."
+        },
+        {
+          "type": "p",
+          "text": "Data Availability: The spectra obtained with the JExoRES and JexoPipe pipelines, along with the retrieved posterior distributions for the canonical model retrievals are available at https://osf.io/gmhw3/. The JWST data presented in this article were obtained from the Mikulski Archive for Space Telescopes at the Space Telescope Science Institute. The specific observations analyzed can be accessed via https://doi.org/10.17909/rx29-yw62 (catalog doi: 10.17909/rx29-yw62)."
+        },
+        {
+          "type": "p",
+          "text": "Facilities: JWST (MIRI)"
+        }
+      ]
+    }
+  ],
+  "source": "arxiv-html"
+}

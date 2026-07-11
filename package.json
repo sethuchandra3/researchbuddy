@@ -1,0 +1,29 @@
+{
+  "name": "researchbuddy",
+  "version": "1.0.0",
+  "description": "Rodney — Your Research Buddy. Read real research papers with a friendly owl who explains the dense bits.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"node --env-file=.env --watch server/index.js\" \"vite\"",
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "fetch-paper": "node --env-file-if-exists=.env scripts/fetch-paper.mjs"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@tailwindcss/vite": "^4.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "cheerio": "^1.0.0",
+    "concurrently": "^9.1.0",
+    "express": "^5.1.0",
+    "gsap": "^3.13.0",
+    "openai": "^6.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^7.0.0"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1706.03762",
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, et al.",
+    "tag": "Artificial Intelligence",
+    "minutes": 18,
+    "blurb": "The 2017 paper that invented the Transformer — the architecture behind ChatGPT, Claude, and basically all modern AI. See where it actually started."
+  },
+  {
+    "id": "2504.12267",
+    "title": "New Constraints on DMS and DMDS in the Atmosphere of K2-18 b",
+    "authors": "Madhusudhan, Constantinou, Holmberg, et al.",
+    "tag": "Astronomy",
+    "minutes": 43,
+    "blurb": "The JWST observations behind the \"possible signs of life on another planet\" headlines. Read what the scientists actually claimed — not the clickbait."
+  },
+  {
+    "id": "2206.07682",
+    "title": "Emergent Abilities of Large Language Models",
+    "authors": "Wei, Tay, Bommasani, Raffel, et al.",
+    "tag": "Artificial Intelligence",
+    "minutes": 25,
+    "blurb": "Why do AI models suddenly get good at things nobody trained them for? A famous investigation of abilities that appear out of nowhere at scale."
+  }
+]

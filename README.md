@@ -1,4 +1,5 @@
 # 🦉 Rodney — Your Research Buddy
+![Uploading Screenshot 2026-07-11 at 4.23.38 PM.png…]()
 
 **Don't just ask AI. Read the real research.**
 

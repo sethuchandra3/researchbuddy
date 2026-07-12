@@ -1,5 +1,7 @@
 # 🦉 Rodney — Your Research Buddy
 
+<img width="891" height="507" alt="Screenshot 2026-07-11 at 4 23 38 PM" src="https://github.com/user-attachments/assets/9c941f04-b2ff-42de-ba4e-4b3b5f14c109" />
+
 **Don't just ask AI. Read the real research.**
 
 Rodney is a friendly owl who sits beside you while you read actual scientific
